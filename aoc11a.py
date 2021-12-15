@@ -51,8 +51,8 @@ osumia = 0
 iteraatioita = 100
 for k in range(iteraatioita):
     rivit = ''.join([str((int(c)+1) % 10) for line in rivit for c in line if int(c) >= 0])
-    print('Step {}'.format(k+1))
-    tulosta(rivit,n)
+    # print('Step {}'.format(k+1))
+    # tulosta(rivit,n)
     rivit,osumia=kasvata(rivit, n, nn, osumia)
 
 print('\nFinal\n')
