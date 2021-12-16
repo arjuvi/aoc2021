@@ -48,13 +48,19 @@ n=len(rivit[0])
 nn=n * len(rivit)
 osumia = 0
 
-iteraatioita = 100
+iteraatioita = 500
+loyty = False
 for k in range(iteraatioita):
     rivit = ''.join([str((int(c)+1) % 10) for line in rivit for c in line if int(c) >= 0])
-    # print('Step {}'.format(k+1))
-    # tulosta(rivit,n)
     rivit,osumia=kasvata(rivit, n, nn, osumia)
-
-print('\nFinal\n')
-tulosta(rivit,n)
-print(osumia)
+    if k == 100:
+        print('\n(a) Final - Step 100\n')
+        tulosta(rivit,n)
+        print('Osumia: {}'.format(osumia))
+    try:
+        if not loyty and int(rivit,2) == 0:
+            print('\n(b) First all zero:\nStep {}'.format(k+1))
+            tulosta(rivit,n)
+            loyty = True
+    except ValueError:
+        pass
