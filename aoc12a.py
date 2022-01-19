@@ -26,7 +26,7 @@ class Graph(object):
 # s = open('aoc12test.txt', 'r').read()
 s = open('aoc12test2.txt', 'r').read()
 # s = open('aoc12.txt', 'r').read()
-print(s)
+# print(s)
 print(s.replace('\n','-'))
 solmut = []
 [solmut.append(x) for x in s.replace('\n','-').split('-') if x not in solmut]
